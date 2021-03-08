@@ -1,22 +1,23 @@
-# polybar-crypto
+# polybar-indodax
+
+> Forked from [willHol/polybar-crypto](https://github.com/willHol/polybar-crypto) to suit the Indodax API.
+
 A *polybar script* that displays the price of various **crypto-currencies**.
 
+![both](https://user-images.githubusercontent.com/1184957/110332836-73e59a00-8053-11eb-8cbf-ce6ebbbc0ccf.png)
 
-
-![screen](https://user-images.githubusercontent.com/24377188/31326832-34dd06de-ad27-11e7-908f-9e7d72398eb7.jpg)
-
-
-
-# Setup
-```
-git clone https://github.com/willHol/polybar-crypto.git &&
-    cd polybar-crypto &&
-    cp ./{crypto-config,crypto.py} ~/.config/polybar
+## Setup
+```bash
+mkdir -p ~/.config/polybar/scripts &&
+    cd ~/.config/polybar/scripts &&
+    git clone https://github.com/ditatompel/polybar-indodax.git &&
+    cd polybar-indodax &&
+    mv config_sample config
 ```
 
 Then in `~/.config/polybar/config`:
 
-```
+```ini
 [bar/top]
 
 ...
@@ -27,58 +28,53 @@ modules-right = crypto
 
 [module/crypto]
 type = custom/script
-interval = 300
-exec = /home/<user>/.config/polybar/crypto.py
+interval = 60
+exec = /home/<user>/.config/polybar/scripts/polybar-indodax/indodax.py
 
 ```
 
-## Dependencies
-The [cryptocoins](https://github.com/allienworks/cryptocoins) *icon font* is used in the screenshots, though you are free to use any other font.
+## Example Configuration
 
-If using the **cryptocoins** icon font, ensure that the following line is present in your `~/.config/polybar/config`:
-
-```
-[bar/top]
-
-...
-
-font-0 = cryptocoins:style=Regular;0
-```
-
-# Example Configuration
-
-`~/.config/polybar/crypto-config`
-```
+`~/.config/polybar/scripts/polybar-indodax/config`
+```ini
 [general]
-base_currency = NZD
-display = percentage
+; Information displayed on Polyfill. can be both, percentage, or price.
+; default: both
+display = both
 
-[bitcoin]
-icon = 
+; Use hexadecimal color code, Polybar alpha value is supported
+color_symbol = #0a81f5
+color_down = #ff2424
+color_up = #00ff84
 
-[ethereum]
-icon = 
+; begin list of cryptocurrency
+[btc_idr]
+symbol = BTC
 
-[litecoin]
-icon = 
+[ada_idr]
+symbol = ADA
 
-[ardor]
-icon = 
+[eth_idr]
+symbol = ETH
 
-[NEO]
-icon = 
+[xmr_idr]
+symbol = XMR
+
 ```
 
-## Display Modes
-
-`display = price`
-
-![screen](https://user-images.githubusercontent.com/24377188/31331319-4ef14406-ad3e-11e7-9242-12440ef96774.jpg)
+### Display Modes
 
 `display = percentage`
 
-![screen](https://user-images.githubusercontent.com/24377188/31331342-65e40428-ad3e-11e7-88e0-3b87921805c7.jpg)
+![percentage](https://user-images.githubusercontent.com/1184957/110332713-47318280-8053-11eb-8056-2bca58c6f799.png)
+
+`display = price`
+
+![price](https://user-images.githubusercontent.com/1184957/110332913-8eb80e80-8053-11eb-945a-8d7aaa492c70.png)
 
 `display = both`
 
-![screen](https://user-images.githubusercontent.com/24377188/31331368-80faac76-ad3e-11e7-9977-e86b1eebe401.jpg)
+![both](https://user-images.githubusercontent.com/1184957/110332836-73e59a00-8053-11eb-8cbf-ce6ebbbc0ccf.png)
+
+## Notes
+> I don't work or have any affiliate with official Dompet Bitcoin Indonesia or INDODAX Trading Platform. This program is free software and distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
