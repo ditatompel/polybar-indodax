@@ -1,19 +1,19 @@
 ### Linux ###
 *~
 
-# temporary files which can be created if a 
-process still has a handle open of a deleted 
+# temporary files which can be created if a
+process still has a handle open of a deleted
 file
 .fuse_hidden*
 
 # KDE directory preferences
 .directory
 
-# Linux trash folder which might appear on 
+# Linux trash folder which might appear on
 any partition or disk
 .Trash-*
 
-# .nfs files are created when an open file is 
+# .nfs files are created when an open file is
 removed but is still being accessed
 .nfs*
 
@@ -45,9 +45,9 @@ wheels/
 *.egg
 
 # PyInstaller
-#  Usually these files are written by a 
+#  Usually these files are written by a
 python script from a template
-#  before PyInstaller builds the exe, so as 
+#  before PyInstaller builds the exe, so as
 to inject date/other infos into it.
 *.manifest
 *.spec
@@ -121,3 +121,6 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# this repo
+config

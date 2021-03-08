@@ -1,0 +1,22 @@
+[general]
+; Information displayed on Polyfill. can be both, percentage, or price.
+; default: both
+display = both
+
+; Use hexadecimal color code, Polybar alpha value is supported
+color_symbol = #0a81f5
+color_down = #ff2424
+color_up = #00ff84
+
+; begin list of cryptocurrency
+[btc_idr]
+symbol = BTC
+
+[ada_idr]
+symbol = ADA
+
+[eth_idr]
+symbol = ETH
+
+[xmr_idr]
+symbol = XMR
