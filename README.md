@@ -2,7 +2,7 @@
 
 > Forked from [willHol/polybar-crypto](https://github.com/willHol/polybar-crypto) to suit the Indodax API.
 
-A *polybar script* that displays the price of various **crypto-currencies**.
+A *polybar script* that displays the price of various **crypto-currencies** based on local (Indonesia) crypto exchange: **Indodax**.
 
 ![both](https://user-images.githubusercontent.com/1184957/110332836-73e59a00-8053-11eb-8cbf-ce6ebbbc0ccf.png)
 
@@ -12,7 +12,7 @@ mkdir -p ~/.config/polybar/scripts &&
     cd ~/.config/polybar/scripts &&
     git clone https://github.com/ditatompel/polybar-indodax.git &&
     cd polybar-indodax &&
-    mv config_sample config
+    cp config_sample config
 ```
 
 Then in `~/.config/polybar/config`:
@@ -28,10 +28,19 @@ modules-right = crypto
 
 [module/crypto]
 type = custom/script
+; Indodax Public API rate limited to 180request/minute, use the resources wisely.
 interval = 60
 exec = /home/<user>/.config/polybar/scripts/polybar-indodax/indodax.py
 
 ```
+
+## Update
+```bash
+cd ~/.config/polybar/scripts/polybar-indodax && git pull
+```
+
+## Dependency
+* Python >=3.6
 
 ## Example Configuration
 

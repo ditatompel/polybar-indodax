@@ -19,7 +19,7 @@ import sys, locale, configparser
 from requests import get
 from pathlib import Path
 
-locale.setlocale(locale.LC_ALL, 'id_ID')
+locale.setlocale(locale.LC_ALL, '') # Use '' for auto, or force e.g. to 'en_US.UTF-8
 config = configparser.ConfigParser()
 
 # File must be opened with utf-8 explicitly
