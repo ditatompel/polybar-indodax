@@ -34,6 +34,14 @@ exec = /home/<user>/.config/polybar/scripts/polybar-indodax/indodax.py
 
 ```
 
+## Update
+```bash
+cd ~/.config/polybar/scripts/polybar-indodax && git pull
+```
+
+## Dependency
+* Python >=3.6
+
 ## Example Configuration
 
 `~/.config/polybar/scripts/polybar-indodax/config`
